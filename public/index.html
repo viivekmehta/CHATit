@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+		<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet"   
+			href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"   
+			integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"   
+			crossorigin="anonymous">  
+		<link rel="stylesheet" href="css/style.css" />
+		<title>CHATit</title>
+	</head>
+	<body>
+		<ion-app>
+			<ion-row class="join-container">
+				<ion-col size-sm="1" size-xs="1" size-md="2" size-lg="4"></ion-col>
+				<ion-col>
+					<ion-card>
+						<ion-header>
+							<ion-toolbar color="secondary">
+								<div class="ion-text-center ion-margin">
+									<h1><i class="fas fa-comments"></i> CHATit</h1>
+								</div>
+							</ion-toolbar>
+						</ion-header>
+						<ion-card-content color="primary" padding>
+							<ion-row>
+								<ion-col>
+									<form action="chat.html">
+										<ion-item>
+											<ion-label position="floating">User Name</ion-label>
+											<ion-input name="username" id="username" required="true"></ion-input>
+										</ion-item>
+										<ion-item>
+											<ion-label position="floating">Room Name</ion-label>
+											<ion-input name="room" id="room" required="true"></ion-input>
+										</ion-item><br/>
+										<div class="ion-text-center ion-margin">
+											<ion-button type="submit" shape="round">JOIN</ion-button>
+										</div>
+									</form>
+								</ion-col>
+							</ion-row>
+						</ion-card-content>
+					</ion-card>
+				</ion-col>
+				<ion-col size-sm="1" size-xs="1" size-md="2" size-lg="4"></ion-col>
+			</ion-row>
+		</ion-app>
+	</body>
+</html>

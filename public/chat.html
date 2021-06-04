@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>CHATit</title>
+</head>
+<body>
+  <ion-app>
+    <ion-tabs>
+      <ion-tab tab="chat">
+        <ion-header>
+          <ion-toolbar color="secondary">
+            <center>
+              <h1><i class="fas fa-comments"></i> CHATit</h1>
+            </center>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-row class="chat-container">
+            <ion-col size-sm="1" size-xs="0" size-md="2" size-lg="2" size-xl="4"></ion-col>
+            <ion-col>
+              <ion-card>
+                <ion-header>
+                  <ion-toolbar color="secondary">
+                    <ion-row>
+                      <ion-col><h1 id="room-name"></h1></ion-col>
+                      <ion-col></ion-col>
+                      <ion-col><button class="btn leave-chat"><a href="index.html">Leave Room</a></button></ion-col>
+                    </ion-row>
+                  </ion-toolbar>
+                </ion-header>
+                <ion-card-content color="primary" padding>
+                  <ion-row>
+                    <ion-col>
+                      <ion-row>
+                          <ion-col>
+                              <div class="chat-messages">
+                              </div>
+                          </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-toolbar class="msg-toolbar" color="secondary">
+                          <ion-col>
+                              <form id="chat-form">
+                                <ion-row>
+                                  <ion-col size="10">
+                                    <input
+                                    id="msg"
+                                    type="text"
+                                    placeholder="Enter Message"
+                                    required
+                                    autocomplete="off"
+                                    />
+                                  </ion-col>
+                                  <ion-col size="2">
+                                    <button class="btn"><i class="fas fa-paper-plane"></i></button>
+                                  </ion-col>
+                                </ion-row>
+                              </form>
+                          </ion-col>
+                      </ion-toolbar>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size-sm="1" size-xs="0" size-md="2" size-lg="2" size-xl="4"></ion-col>
+          </ion-row>
+        </ion-content>
+      </ion-tab>
+      <ion-tab tab="users">
+        <ion-header>
+          <ion-toolbar color="secondary">
+            <center>
+              <h1><i class="fas fa-comments"></i> CHATit</h1>
+            </center>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content fullscreen class="ion-padding">
+          <ion-row class="chat-container">
+            <ion-col size-sm="1" size-xs="1" size-md="2" size-lg="4"></ion-col>
+            <ion-col>
+              <ion-card>
+                <ion-header>
+                  <ion-toolbar color="secondary">
+                    <ion-row>
+                      <ion-col>
+                        <center>
+                          <h3><i class="fas fa-users"></i> Online Users</h3>
+                         </center>
+                      </ion-col>
+                    </ion-row>
+                  </ion-toolbar>
+                </ion-header>
+                <ion-card-content color="primary" padding>
+                  <ion-row>
+                    <ion-col>
+                      <center>
+                        <ul id="users"></ul>
+                      </center>                      
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size-sm="1" size-xs="1" size-md="2" size-lg="4"></ion-col>
+          </ion-row>
+        </ion-content>
+      </ion-tab>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="chat">
+          <ion-label>Chat</ion-label>
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button tab="users">
+          <ion-label>Users</ion-label>
+          <ion-icon name="people-outline"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-app>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.min.js" 
+  integrity="sha512-aTKlYRb1QfU1jlF3k+aS4AqTpnTXci4R79mkdie/bp6Xm51O5O3ESAYhvg6zoicj/PD6VYY0XrYwsWLcvGiKZQ=="
+  crossorigin="anonymous">
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</html>
